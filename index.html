@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Casa térrea de alto padrão no Condomínio ARTS — Uberlândia/MG</title>
+  <meta name="description" content="Casa térrea de alto padrão no Condomínio ARTS (Uberlândia/MG): 3 suítes + escritório reversível, gourmet integrado, piscina aquecida com hidromassagem e cascata, acabamentos premium. Agende sua visita." />
+
+  <!-- Social -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Casa térrea de alto padrão no Condomínio ARTS — Uberlândia/MG">
+  <meta property="og:description" content="3 suítes + escritório reversível, gourmet integrado, piscina aquecida com hidromassagem e cascata, porta imponente 5,5 m, acabamentos premium.">
+  <!-- use JPG/PNG 1200x630 quando publicar -->
+  <meta property="og:image" content="https://SEU-DOMINIO.com.br/imagens/destaque.jpg">
+  <meta property="og:url" content="https://SEU-DOMINIO.com.br/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonte minimalista -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.ico">
+
+  <style>
+    :root{
+      --brand:#ff6a00;
+      --ink:#0f172a; --muted:#6b7280;
+      --bg-grad:linear-gradient(180deg,#dfe3ea 0%, #cdd3dc 45%, #c4cbd6 100%);
+      --card:#ffffff; --shadow:0 10px 30px rgba(0,0,0,.10);
+      --radius:16px;
+    }
+    [data-theme="dark"]{
+      --ink:#e5e7eb; --muted:#9ca3af;
+      --bg-grad:linear-gradient(180deg,#0b0f15 0%, #0e141d 50%, #0b0f15 100%);
+      --card:#0f172a; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg-grad);scroll-behavior:smooth}
+    img{max-width:100%;display:block}
+    a{text-decoration:none}
+    .container{width:min(1120px,92vw);margin-inline:auto}
+
+    /* Topbar (toggle tema) */
+    .topbar{position:fixed;top:16px;right:16px;z-index:60}
+    .toggle{border:none;border-radius:999px;background:rgba(255,255,255,.85);padding:8px 12px;box-shadow:var(--shadow);cursor:pointer;font-weight:600}
+    [data-theme="dark"] .toggle{background:rgba(17,17,17,.85);color:#fff}
+
+    /* Botão flutuante WhatsApp */
+    .fab{position:fixed;right:18px;bottom:18px;z-index:60;background:#25D366;color:#0b3d21;
+      padding:14px 16px;border-radius:999px;font-weight:800;box-shadow:var(--shadow)}
+    .fab:hover{transform:translateY(-1px)}
+
+    /* HERO */
+    header.hero{color:#fff;background:linear-gradient(120deg,var(--brand),#ff9966)}
+    .hero-inner{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;padding:56px 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:rgba(255,255,255,.16);backdrop-filter:blur(6px);padding:8px 12px;border-radius:999px;font-size:.9rem}
+    h1{font-size:clamp(1.8rem,3.2vw,3rem);line-height:1.15;margin:16px 0 8px}
+    .subtitle{opacity:.95;font-weight:300}
+    .highlights{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 28px}
+    .pill{background:#fff;color:#222;padding:10px 14px;border-radius:999px;font-weight:600;box-shadow:var(--shadow)}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow);transition:.2s ease;white-space:nowrap}
+    .btn.primary{background:#fff;color:#111}
+    .btn.primary:hover{transform:translateY(-2px)}
+    .btn.whatsapp{background:#25D366;color:#0b3d21}
+    .hero-photo{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow)}
+
+    /* Seções */
+    section{padding:56px 0}
+    .section-title{font-size:clamp(1.4rem,3vw,2rem);margin-bottom:8px}
+    .section-sub{color:var(--muted);margin-bottom:24px}
+
+    /* Card base */
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden;padding:22px}
+
+    /* Carrossel Horizontal */
+    .hcarousel{position:relative;height:min(70vh,720px);min-height:380px;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);background:#000}
+    .hslide{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+    .hslide picture, .hslide img{width:100%;height:100%;object-fit:cover}
+    .hcontrols{position:absolute;inset:0;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
+    .hbtn{pointer-events:auto;border:none;border-radius:999px;background:rgba(255,255,255,.9);box-shadow:var(--shadow);width:48px;height:48px;display:grid;place-items:center;font-size:22px;cursor:pointer}
+    .hbtn:hover{background:#fff}
+    .hcounter{position:absolute;right:12px;bottom:12px;background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;border-radius:999px;font-weight:700}
+
+    @media (max-width: 960px){
+      .hero-inner{grid-template-columns:1fr;gap:20px;padding:28px 0}
+      .hcarousel{height:58vh}
+    }
+
+    /* Details / Video / Map / Footer */
+    .details{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
+    .details ul{margin:0;padding-left:18px;line-height:1.8}
+    .media-card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
+    .video-wrap{max-width:900px;margin:0 auto}
+    .video{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:16/9}
+    .video video{width:100%;height:100%;object-fit:cover;display:block}
+
+    footer{background:#0f172a;color:#cbd5e1;padding:36px 0}
+    [data-theme="dark"] footer{background:#0b1220}
+    footer a{color:#fff;text-decoration:underline}
+
+    /* Lightbox */
+    #lightbox{position:fixed;inset:0;background:rgba(0,0,0,.95);display:none;align-items:center;justify-content:center;padding:20px;z-index:70}
+    #lightbox img{max-width:94vw;max-height:90vh;border-radius:12px}
+
+/* Botões contato (com ícones PNG) */
+.contact-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.contact-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  transition: .3s;
+}
+
+.contact-btn .icon {
+  width: 26px;   /* padrão para todos */
+  height: 26px;
+  object-fit: contain;
+}
+
+/* aumenta só a logo do Instagram */
+.instagram-btn .icon {
+  width: 52px;   /* maior que os outros */
+  height: 52px;
+}
+
+.whatsapp-btn {
+  background: #25D366;
+  color: #fff;
+}
+.whatsapp-btn:hover {
+  background: #1ebe5d;
+}
+
+.instagram-btn {
+  background: #E1306C;
+  color: #fff;
+}
+.instagram-btn:hover {
+  background: #c2265a;
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- Toggle de tema + FAB WhatsApp -->
+  <div class="topbar"><button class="toggle" id="themeToggle" aria-label="Alternar tema">🌙 Dark</button></div>
+  <a class="fab" href="https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS" target="_blank" rel="noopener">💬 Entrar em contato</a>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="container hero-inner">
+      <div>
+        <span class="badge">🏡 Venda Direta • Condomínio Fechado • Alto Padrão</span>
+        <h1>Casa térrea no <u>Condomínio ARTS</u> — Uberlândia/MG</h1>
+        <p class="subtitle">Funcionalidade, bem-estar e requinte em cada detalhe</p>
+        <div class="highlights">
+          <span class="pill">💰 R$ 2.490.000</span>
+          <span class="pill">🛌 3 suítes + escritório (reversível)</span>
+          <span class="pill">💧 Piscina aquecida com hidro e cascata</span>
+          <span class="pill">🚪 Porta imponente 5,5 m</span>
+          <span class="pill">🏡 Térrea • Premium</span>
+        </div>
+        <div class="cta-row">
+          <a class="btn whatsapp" href="https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS" target="_blank" rel="noopener">Agendar visita</a>
+          <a class="btn primary" href="#galeria">Ver fotos</a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <picture>
+          <source srcset="imagens/principal.webp" type="image/webp">
+          <img src="imagens/principal.webp" alt="Imagem principal do imóvel" loading="eager" width="1100" height="750">
+        </picture>
+      </div>
+    </div>
+  </header>
+
+  <!-- GALERIA — CARROSSEL HORIZONTAL -->
+  <section id="galeria" class="container">
+    <h2 class="section-title">Galeria de fotos</h2>
+    <p class="section-sub">Use as setas <b>←</b> e <b>→</b>, arraste no celular ou clique para ampliar.</p>
+
+    <div class="hcarousel" id="hcarousel" role="region" aria-label="Galeria do imóvel">
+      <div class="hslide" id="hslide" title="Clique para ampliar"></div>
+      <div class="hcontrols" aria-hidden="false">
+        <button class="hbtn" id="prevBtn" aria-label="Imagem anterior">←</button>
+        <button class="hbtn" id="nextBtn" aria-label="Próxima imagem">→</button>
+      </div>
+      <div class="hcounter" id="hcounter">1/25</div>
+    </div>
+  </section>
+
+  <!-- DESTAQUES -->
+  <section class="container details">
+    <div>
+      <h2 class="section-title">Destaques do imóvel</h2>
+      <ul>
+        <li>✔ 3 suítes + 1 escritório reversível (até 4 suítes)</li>
+        <li>✔ Estar e jantar integrados à cozinha e ao espaço gourmet</li>
+        <li>✔ Piscina aquecida em pastilhas, com hidromassagem e cascata</li>
+        <li>✔ Porta de entrada imponente com 5,5 m e fechadura digital</li>
+        <li>✔ Esquadrias em alumínio automatizadas nos quartos</li>
+        <li>✔ Acabamentos premium: porcelanato 123×123 cm, metais e louças Deca</li>
+        <li>✔ Paisagismo finalizado com irrigação automatizada inteligente</li>
+        <li>✔ Preparação para automação residencial e aspiração central</li>
+      </ul>
+    </div>
+    <aside class="card">
+      <h3 style="margin-top:0">Informações rápidas</h3>
+      <ul style="line-height:1.9;margin:0;padding-left:18px">
+        <li>Localização: <b>Condomínio ARTS — Uberlândia/MG</b></li>
+        <li>Condomínio fechado com segurança e infraestrutura</li>
+        <li>Venda direta com a proprietária</li>
+        <li>Documentação regular</li>
+        <li>Visitas com agendamento</li>
+      </ul>
+      <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
+        <a class="btn whatsapp" href="https://wa.me/5534993226765?text=Quero%20visitar%20a%20casa%20no%20Condom%C3%ADnio%20ARTS" target="_blank" rel="noopener">Quero agendar visita</a>
+      </div>
+    </aside>
+  </section>
+
+  <!-- TOUR EM VÍDEO (16:9 centralizado) -->
+  <section class="container">
+    <h2 class="section-title">Tour em vídeo</h2>
+    <div class="media-card video-wrap">
+      <div class="video">
+        <video controls playsinline poster="imagens/14.webp">
+          <source src="videos/tour.mp4" type="video/mp4">
+          Seu navegador não suporta vídeo em HTML5.
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA -->
+  <section class="container">
+    <h2 class="section-title">Localização</h2>
+    <p class="section-sub">Condomínio fechado com fácil acesso a serviços, escolas e vias principais.</p>
+    <div class="media-card">
+      <iframe style="width:100%;height:420px;border:0;border-radius:12px" loading="lazy" src="https://www.google.com/maps?q=Condom%C3%ADnio%20ARTS%20Uberl%C3%A2ndia%20MG&output=embed" title="Mapa da localização"></iframe>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="lead" class="container">
+    <div class="card">
+      <h2 class="section-title">Fale comigo</h2>
+      <p class="section-sub">Entre em contato direto pelo WhatsApp ou Instagram.</p>
+
+      <!-- >>> SUBSTITUA APENAS OS LINKS AQUI EMBAIXO PELO SEU NÚMERO/USUÁRIO <<< -->
+      <div class="contact-buttons">
+        <a href="https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS"
+           target="_blank" class="contact-btn whatsapp-btn">
+          <img src="imagens/zap.png" alt="WhatsApp" class="icon"> WhatsApp
+        </a>
+        <a href="https://www.instagram.com/emanuellefernanda"
+           target="_blank" class="contact-btn instagram-btn">
+          <img src="imagens/insta.png" alt="Instagram" class="icon"> Instagram
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container" style="display:grid;gap:8px">
+      <div>⚠️ As imagens podem conter representações ilustrativas. Informações sujeitas a alteração sem aviso prévio.</div>
+      <div>© <span id="year"></span> Venda direta com a proprietária. Todos os direitos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox"><img id="lb-img" src="" alt="Imagem ampliada"></div>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Offer",
+    "priceCurrency":"BRL",
+    "price":"2490000",
+    "availability":"https://schema.org/InStock",
+    "itemOffered":{
+      "@type":"SingleFamilyResidence",
+      "name":"Casa térrea de alto padrão no Condomínio ARTS",
+      "address":{"@type":"PostalAddress","streetAddress":"Condomínio ARTS","addressLocality":"Uberlândia","addressRegion":"MG","addressCountry":"BR"},
+      "numberOfBedrooms":3,
+      "amenityFeature":[
+        {"@type":"LocationFeatureSpecification","name":"Piscina aquecida com hidromassagem e cascata","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Espaço gourmet integrado","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Porta 5,5 m com fechadura digital","value":true},
+        {"@type":"LocationFeatureSpecification","name":"Esquadrias automatizadas","value":true}
+      ],
+      "image":[
+        "https://SEU-DOMINIO.com.br/imagens/1.jpg",
+        "https://SEU-DOMINIO.com.br/imagens/12.jpg",
+        "https://SEU-DOMINIO.com.br/imagens/15.jpg"
+      ]
+    },
+    "seller":{"@type":"Person","name":"Proprietária"}
+  }
+  </script>
+
+  <script>
+    // Ano
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Tema (Dark/Light)
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      root.setAttribute('data-theme','dark'); themeToggle.textContent='☀️ Light';
+    }
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme){ root.setAttribute('data-theme',savedTheme); themeToggle.textContent = savedTheme==='dark' ? '☀️ Light' : '🌙 Dark'; }
+    themeToggle.addEventListener('click', ()=>{
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      root.setAttribute('data-theme', isDark ? 'light' : 'dark');
+      themeToggle.textContent = isDark ? '🌙 Dark' : '☀️ Light';
+      localStorage.setItem('theme', isDark ? 'light' : 'dark');
+    });
+
+    // Carrossel horizontal
+    const fotos = Array.from({length:25}, (_,i)=> String(i+1));
+    const hslide   = document.getElementById('hslide');
+    const hcounter = document.getElementById('hcounter');
+    const prevBtn  = document.getElementById('prevBtn');
+    const nextBtn  = document.getElementById('nextBtn');
+    let idx = 0;
+
+    function renderSlide() {
+      const base = fotos[idx];
+      hslide.innerHTML = `
+        <picture>
+          <source srcset="imagens/${base}.webp" type="image/webp">
+          <img src="imagens/${base}.webp" alt="Foto ${base} da casa no Condomínio ARTS">
+        </picture>`;
+      hcounter.textContent = (idx+1) + '/' + fotos.length;
+      // preload próxima
+      const preload = new Image();
+      preload.src = 'imagens/' + (fotos[(idx+1)%fotos.length]) + '.webp';
+    }
+    function prev(){ idx = (idx - 1 + fotos.length) % fotos.length; renderSlide(); }
+    function next(){ idx = (idx + 1) % fotos.length; renderSlide(); }
+    prevBtn.addEventListener('click', prev);
+    nextBtn.addEventListener('click', next);
+
+    // Teclado
+    window.addEventListener('keydown', (e)=>{
+      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'ArrowRight') next();
+    });
+    // Swipe mobile
+    let sx = null;
+    hslide.addEventListener('touchstart', e=>{ sx = e.changedTouches[0].clientX; }, {passive:true});
+    hslide.addEventListener('touchend', e=>{
+      const dx = e.changedTouches[0].clientX - sx;
+      if (Math.abs(dx) > 40){ dx > 0 ? prev() : next(); }
+    }, {passive:true});
+
+    // Lightbox
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    hslide.addEventListener('click', ()=>{
+      const img = hslide.querySelector('img');
+      lbImg.src = img.currentSrc || img.src;
+      lb.style.display='flex';
+    });
+    lb.addEventListener('click', ()=>{ lb.style.display='none'; lbImg.src=''; });
+
+    // Inicializa
+    renderSlide();
+  </script>
+</body>
+</html>
