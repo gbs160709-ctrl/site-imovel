@@ -293,6 +293,45 @@
   display: inline-block;
 }
 
+/* ===== Ajuste mobile para "Destaques do imóvel" + "Informações rápidas" ===== */
+@media (max-width: 960px){
+  /* Empilha os 2 cards (em vez de 2 colunas) e dá um respiro */
+  .details{
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  /* Mais legibilidade nas listas */
+  .details ul{
+    padding-left: 20px;
+    line-height: 1.75;
+  }
+  .details li{
+    margin: 10px 0;
+    word-break: normal;
+    overflow-wrap: anywhere; /* evita quebras ruins */
+  }
+
+  /* Botão do card ocupa a largura toda no celular */
+  .details .card .btn{
+    width: 100%;
+  }
+
+  /* Um pouco menos de padding nos cards no mobile */
+  .details .card{
+    padding: 16px;
+  }
+}
+
+/* Mobile pequeno: títulos um pouco menores */
+@media (max-width: 420px){
+  .details h2,
+  .details h3{
+    font-size: 1.1rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+}
 
   </style>
 </head>
