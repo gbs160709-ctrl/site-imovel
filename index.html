@@ -152,6 +152,148 @@
   background: #c2265a;
 }
 
+/* Layout da seção de tour (2 colunas) */
+.tour-wrap {
+  display: flex;
+  gap: 24px;
+  align-items: center; /* centraliza verticalmente */
+}
+
+/* Coluna do vídeo (esquerda) */
+.tour-left {
+  flex: 0 0 auto; /* largura fixa pelo container interno (350px) */
+}
+
+/* Coluna do card (direita) */
+.tour-right {
+  flex: 1 1 auto;
+}
+
+/* Lista de destaques no card */
+.tour-features {
+  margin: 0 0 16px 0;
+  padding-left: 18px;
+  line-height: 1.8;
+}
+
+/* Nota discreta de venda direta */
+.tour-owner-note {
+  margin-top: 12px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+/* Mobile: empilha e centraliza melhor o vídeo */
+@media (max-width: 960px) {
+  .tour-wrap {
+    flex-direction: column;
+  }
+  .tour-left > div { /* wrapper do vídeo */
+    margin-left: auto;
+    margin-right: auto; /* centraliza no mobile */
+  }
+}
+
+/* ===== SOBRE O CONDOMÍNIO ===== */
+.condo-subtitle{
+  margin:0 0 10px 0;
+  font-size:1.15rem;
+  font-weight:700;
+}
+
+.condo-list{
+  margin:0;
+  padding-left:18px;
+  line-height:1.9;
+}
+
+.condo-grid{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:22px;
+  margin-bottom:22px;
+}
+
+.condo-right .condo-imggrid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
+
+.condo-fig{
+  margin:0;
+  border-radius:12px;
+  overflow:hidden;
+  background:#000;
+  position:relative;
+  box-shadow:var(--shadow);
+}
+.condo-fig img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+  display:block;
+}
+.condo-fig.big img{
+  height:300px;
+}
+.condo-fig figcaption{
+  position:absolute;left:10px;bottom:10px;
+  background:rgba(0,0,0,.55);color:#fff;padding:6px 10px;
+  border-radius:8px;font-size:.9rem
+}
+
+/* Segurança */
+.condo-security{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:22px;
+  margin-bottom:22px;
+}
+
+/* Localização */
+.condo-loc{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:22px;
+}
+.loc-left .btn.primary{margin-top:12px}
+
+/* Responsivo */
+@media (max-width: 960px){
+  .condo-grid,
+  .condo-security,
+  .condo-loc{
+    grid-template-columns:1fr;
+  }
+  .condo-fig img{ height:200px; }
+  .condo-fig.big img{ height:240px; }
+}
+
+/* Localização ajustada */
+.condo-loc {
+  display: block;
+  text-align: center;
+}
+
+.loc-full img {
+  width: 100%;
+  max-width: 900px; /* limite de largura */
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: zoom-in;
+  transition: transform .3s;
+}
+
+.loc-full img:hover {
+  transform: scale(1.02);
+}
+
+.map-link {
+  display: inline-block;
+}
+
+
   </style>
 </head>
 <body>
@@ -234,20 +376,117 @@
   </section>
 
   <!-- TOUR EM VÍDEO (16:9 centralizado) -->
-<section id="tour" class="container">
-  <h2 class="section-title">Tour Virtual</h2>
-  <p class="section-sub">Veja um vídeo exclusivo da casa</p>
-  <video controls width="100%" style="max-width: 800px; border-radius: 12px;">
-    <source src="https://drive.google.com/uc?export=download&id=1ond3-dQavnrioYlTNyde9HVzxmtj8jYP" type="video/mp4">
-    Seu navegador não suporta vídeos.
-  </video>
+<section id="tour" class="container tour-wrap">
+  <div class="tour-left">
+    <h2 class="section-title">Tour em vídeo</h2>
+    <p class="section-sub">Veja um vídeo exclusivo da casa</p>
+
+    <!-- Vídeo vertical à esquerda -->
+    <div style="width:350px;max-width:100%;border-radius:12px;overflow:hidden;margin-top:15px;">
+      <div style="padding:177.78% 0 0 0;position:relative;">
+        <iframe
+          src="https://player.vimeo.com/video/1118566534?badge=0&autopause=0&player_id=0&app_id=58479"
+          frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen
+          style="position:absolute;top:0;left:0;width:100%;height:100%;">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card de destaques + CTA à direita -->
+  <aside class="tour-right card">
+    <h3 style="margin:0 0 10px 0;">Destaques que você vai amar</h3>
+    <ul class="tour-features">
+      <li>✅ 3 suítes + escritório reversível</li>
+      <li>✅ Piscina aquecida com hidro e cascata</li>
+      <li>✅ Espaço gourmet integrado à área social</li>
+      <li>✅ Porta imponente 5,5m com fechadura digital</li>
+      <li>✅ Esquadrias automatizadas • Acabamentos premium</li>
+    </ul>
+
+    <a class="btn whatsapp"
+       href="https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS"
+       target="_blank" rel="noopener">Agendar visita</a>
+  </aside>
+</section>
+
+
+<!-- ===== SOBRE O CONDOMÍNIO ===== -->
+<section id="condominio" class="container">
+  <h2 class="section-title">Sobre o condomínio</h2>
+  <p class="section-sub">Estrutura completa de lazer, segurança 24h e localização privilegiada.</p>
+
+  <!-- Estrutura & Lazer -->
+  <div class="card condo-grid">
+    <div class="condo-left">
+      <h3 class="condo-subtitle">Estrutura &amp; Lazer</h3>
+      <ul class="condo-list">
+        <li>✅ Academia completa</li>
+        <li>✅ Quadra poliesportiva</li>
+        <li>✅ Quadra de tênis</li>
+        <li>✅ Quadra de squash</li>
+        <li>✅ Playground</li>
+        <li>✅ Churrasqueira</li>
+      </ul>
+    </div>
+    <div class="condo-right">
+      <div class="condo-imggrid">
+        <figure class="condo-fig">
+          <img src="imagens/academia.webp" alt="Academia do condomínio">
+          <figcaption>Academia</figcaption>
+        </figure>
+        <figure class="condo-fig">
+          <img src="imagens/piscina.webp" alt="Piscina do condomínio">
+          <figcaption>Piscina</figcaption>
+        </figure>
+        <figure class="condo-fig">
+          <img src="imagens/brinquedoteca.webp" alt="Brinquedoteca">
+          <figcaption>Brinquedoteca</figcaption>
+        </figure>
+        <figure class="condo-fig">
+          <img src="imagens/saladejogos.webp" alt="Sala de Jogos">
+          <figcaption>Sala de jogos</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+
+  <!-- Segurança -->
+  <div class="card condo-security">
+    <div class="security-left">
+      <h3 class="condo-subtitle">Segurança</h3>
+      <ul class="condo-list">
+        <li>🛡️ Portão eletrônico</li>
+        <li>🎥 Circuito completo de câmeras</li>
+        <li>👮 Segurança 24 horas</li>
+        <li>🏢 Portaria 24 horas</li>
+      </ul>
+    </div>
+    <div class="security-right">
+      <figure class="condo-fig big">
+        <img src="imagens/frente.webp" alt="Entrada do condomínio">
+        <figcaption>Entrada do condomínio</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- Localização -->
+<div class="card condo-loc">
+  <div class="loc-full">
+    <h3 class="condo-subtitle">Localização da casa dentro do condominio</h3>
+    <a href="imagens/mapa.webp" target="_blank" class="map-link">
+      <img src="imagens/mapa.webp" alt="Mapa interno">
+    </a>
+  </div>
+</div>
+
 </section>
 
 
   <!-- MAPA -->
   <section class="container">
-    <h2 class="section-title">Localização</h2>
-    <p class="section-sub">Condomínio fechado com fácil acesso a serviços, escolas e vias principais.</p>
+    <h2 class="section-title">Localização do condomínio</h2>
+    <p class="section-sub">Condomínio fechado proximo ao Uberlandia Shopping com fácil acesso a serviços, escolas e vias principais.</p>
     <div class="media-card">
       <iframe style="width:100%;height:420px;border:0;border-radius:12px" loading="lazy" src="https://www.google.com/maps?q=Condom%C3%ADnio%20ARTS%20Uberl%C3%A2ndia%20MG&output=embed" title="Mapa da localização"></iframe>
     </div>
