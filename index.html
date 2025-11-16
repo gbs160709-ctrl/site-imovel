@@ -13,7 +13,7 @@
     gtag('config', 'AW-17736104945');
   </script>
 
-  <!-- Event snippet para conversão em cliques de WhatsApp ("Contato") -->
+  <!-- Event snippet para conversão em cliques de WhatsApp ("Contato botão zap") -->
   <script>
     function gtag_report_conversion(url) {
       var callback = function () {
@@ -22,10 +22,8 @@
         }
       };
       gtag('event', 'conversion', {
-        'send_to': 'AW-17736104945/8WlkCN-5r8EbEPH3nYlC',
-        'value': 1.0,
-        'currency': 'BRL',
-        'event_callback': callback
+          'send_to': 'AW-17736104945/anNkCNqLsMEbEPH3nYlC',
+          'event_callback': callback
       });
       return false;
     }
@@ -571,7 +569,7 @@
            target="_blank" class="contact-btn whatsapp-btn">
           <img src="imagens/zap.png" alt="WhatsApp" class="icon"> WhatsApp
         </a>
-        <a href="https://www.instagram.com/emanuellefernanda"
+        <a href="https://www.instagram.com/emanuellefernanda" onclick="return gtag_report_conversion('https://www.instagram.com/emanuellefernanda');"
            target="_blank" class="contact-btn instagram-btn">
           <img src="imagens/insta.png" alt="Instagram" class="icon"> Instagram
         </a>
