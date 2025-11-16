@@ -10,12 +10,30 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'AW-17736104945');
   </script>
 
+  <!-- Event snippet para conversão "Enviar formulário de lead" -->
+  <script>
+    function gtag_report_conversion(url) {
+      var callback = function () {
+        if (typeof(url) != 'undefined') {
+          window.location = url;
+        }
+      };
+      gtag('event', 'conversion', {
+        'send_to': 'AW-17736104945/kp6uCLfApcEbEPH3nYlC',
+        'value': 1.0,
+        'currency': 'BRL',
+        'event_callback': callback
+      });
+      return false;
+    }
+  </script>
+
+
   <title>Casa térrea de alto padrão no Condomínio ARTS — Uberlândia/MG</title>
-  <meta name="description" content="Casa térrea de alto padrão no Condomínio ARTS (Uberlândia/MG): 3 suítes + escritório reversível, gourmet integrado, piscina aquecida com hidromassagem e cascata, acabamentos premium. Agende sua visita.">
+  <meta name="description" content="Casa térrea de alto padrão no Condomínio ARTS (Uberlândia/MG): 3 suítes + escritório reversível, gourmet integrado, piscina aquecida com hidromassagem e cascata, acabamentos premium. Agende sua visita." />
 
   <!-- Social -->
   <meta property="og:type" content="website">
@@ -349,7 +367,7 @@
 
   <!-- Toggle de tema + FAB WhatsApp -->
   <div class="topbar"><button class="toggle" id="themeToggle" aria-label="Alternar tema">🌙 Dark</button></div>
-  <a class="fab" href="https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS" target="_blank" rel="noopener">💬 Entrar em contato</a>
+  <a class="fab" href="https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS" onclick="return gtag_report_conversion('https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS');" target="_blank" rel="noopener">💬 Entrar em contato</a>
 
   <!-- HERO -->
   <header class="hero">
@@ -366,7 +384,7 @@
           <span class="pill">🏡 Térrea • Premium</span>
         </div>
         <div class="cta-row">
-          <a class="btn whatsapp" href="https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS" target="_blank" rel="noopener">Agendar visita</a>
+          <a class="btn whatsapp" href="https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS" onclick="return gtag_report_conversion('https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS');" target="_blank" rel="noopener">Agendar visita</a>
           <a class="btn primary" href="#galeria">Ver fotos</a>
         </div>
       </div>
@@ -419,7 +437,7 @@
         <li>Visitas com agendamento</li>
       </ul>
       <div style="margin-top:18px;display:flex;gap:10px;flex-wrap:wrap">
-        <a class="btn whatsapp" href="https://wa.me/5534993226765?text=Quero%20visitar%20a%20casa%20no%20Condom%C3%ADnio%20ARTS" target="_blank" rel="noopener">Quero agendar visita</a>
+        <a class="btn whatsapp" href="https://wa.me/5534993226765?text=Quero%20visitar%20a%20casa%20no%20Condom%C3%ADnio%20ARTS" onclick="return gtag_report_conversion('https://wa.me/5534993226765?text=Quero%20visitar%20a%20casa%20no%20Condom%C3%ADnio%20ARTS');" target="_blank" rel="noopener">Quero agendar visita</a>
       </div>
     </aside>
   </section>
@@ -454,7 +472,7 @@
     </ul>
 
     <a class="btn whatsapp"
-       href="https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS"
+       href="https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS" onclick="return gtag_report_conversion('https://wa.me/5534993226765?text=Quero%20agendar%20visita%20na%20casa%20do%20Condom%C3%ADnio%20ARTS');"
        target="_blank" rel="noopener">Agendar visita</a>
   </aside>
 </section>
@@ -549,7 +567,7 @@
 
       <!-- >>> SUBSTITUA APENAS OS LINKS AQUI EMBAIXO PELO SEU NÚMERO/USUÁRIO <<< -->
       <div class="contact-buttons">
-        <a href="https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS"
+        <a href="https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS" onclick="return gtag_report_conversion('https://wa.me/5534993226765?text=Tenho%20interesse%20na%20casa%20no%20Condom%C3%ADnio%20ARTS');"
            target="_blank" class="contact-btn whatsapp-btn">
           <img src="imagens/zap.png" alt="WhatsApp" class="icon"> WhatsApp
         </a>
@@ -672,4 +690,3 @@
   </script>
 </body>
 </html>
-
